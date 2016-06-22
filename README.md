@@ -12,6 +12,20 @@
 
 3: Launch: `docker-compose up -d`
 
+4: Create postgres tables: 
+```bash
+docker-machine ssh itma-wiki
+docker ps [dockerconfluence_postgres_1]
+docker exec -it dockerconfluence_postgres_1 bash
+gosu postgres psql
+CREATE USER confluence;
+CREATE DATABASE confluence;
+GRANT ALL PRIVILEGES ON DATABASE confluence TO confluence;
+\l
+\q
+exit
+exit	
+```
 ====
 
 To tear down: `docker-compose down && docker-machine stop itma-wiki && docker-machine rm itma-wiki`

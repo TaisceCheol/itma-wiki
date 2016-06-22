@@ -6,16 +6,12 @@ confluence:
   environment:
     CATALINA_OPTS: -Xms64m -Xmx768m -Datlassian.plugins.enable.wait=300 
   ports:
-    - "8090:8090"
+    - "80:8090"
   links:
     - postgres
-  expose:
-    - 8090
 
 postgres:
   image: postgres
- # cpu_shares: 100
-#  mem_limit: 512MB
   ports:
     - "5432:5432"
   volumes:
