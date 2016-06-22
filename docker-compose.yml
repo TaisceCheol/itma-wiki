@@ -1,8 +1,8 @@
 confluence:
   image: cptactionhank/atlassian-confluence:latest
-#  restart: always
-#  cpu_shares: 100
-#  mem_limit: 209715200
+ # restart: always
+  cpu_shares: 100
+  mem_limit: 1GB 
   ports:
     - "80:8090"
   links:
@@ -10,8 +10,8 @@ confluence:
 
 postgres:
   image: postgres
-#  cpu_shares: 100
-#  mem_limit: 209715200
+  cpu_shares: 100
+  mem_limit: 512MB
   ports:
     - "5432:5432"
   volumes:
